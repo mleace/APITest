@@ -70,7 +70,7 @@ var accounts = [
 
 // this function will send <data> as JSON and increase calls <limit> by 1
 function sendBody(req, res, data, limit) {
-    res.set({"X-Kong-Limit": limit });
+    res.set({"X-Rate-Limit": limit });
     console.log("Sending data: " + JSON.stringify(data));
     res.json(data);
 }
