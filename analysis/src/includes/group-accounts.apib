@@ -11,16 +11,16 @@ Retrieve details about specified user account.
 
 + Request Existing account
     + Parameters
-        + id: `54307275`
+        + id: `3`
 
-+ Response 200 (application/json;charset=UTF-8)
++ Response 200 (application/json; charset=utf-8)
   + Attributes (UserAccount, required)
 
 + Request Non-existing account
     + Parameters
         + id: `123`
 
-+ Response 404 (application/json;charset=UTF-8)
++ Response 404 (application/json; charset=utf-8)
   When account is not found.
 
   + Attributes (Errors, required)
@@ -37,6 +37,6 @@ feature | supported by resource
 [filtering](#header-filtering) | no
 
 
-+ Response 200 (application/json;charset=UTF-8)
++ Response 200 (application/json; charset=utf-8)
   + Attributes (object)
         + data (array[UserAccount], fixed-type, required)

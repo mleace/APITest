@@ -1,0 +1,24 @@
+dry-run: null
+hookfiles: ""
+language: nodejs
+sandbox: false
+server: null
+server-wait: 3
+init: false
+custom: {}
+names: false
+reporter: ["html", "junit", "markdown"]
+output: ["test_output/dredd_output.html", "test_output/dredd.xml", "test_output/dredd.md"]
+header: ["apikey: demo_user_key"]
+sorted: false
+user: null
+inline-errors: false
+details: false
+method: ["GET", "PUT", "POST", "DELETE"]
+color: true
+level: info
+timestamp: false
+silent: false
+path: []
+blueprint: "analysis/generated/open-api.apib"
+endpoint: 'http://localhost:3500/'

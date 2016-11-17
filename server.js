@@ -10,6 +10,62 @@ app.set("json spaces", 4);
 // app listen port
 var port = 3500;
 
+// stored data - just an example!
+var accounts = [
+{
+      "name": {
+        "honourBeforeName": "Ing.",
+        "honourAfterName": "PhD.",
+        "firstName": "John",
+        "middleNames": [
+          "Peter",
+          "Frank"
+        ],
+        "lastName": "Doe"
+      },
+      "salutation": "Mr.",
+      "vocative": "John",
+      "isAdult": true
+    },
+    {
+      "name": {
+        "honourBeforeName": "MSc.",
+        "firstName": "Peter",
+        "middleNames": [
+          "Frank"
+        ],
+        "lastName": "Xaverius"
+      },
+      "salutation": "Mr.",
+      "vocative": "Peter",
+      "isAdult": true
+    },
+    {
+      "name": {
+        "firstName": "Jain",
+        "middleNames": [
+          "Xi"
+        ],
+        "lastName": "Li"
+      },
+      "salutation": "Mrs.",
+      "vocative": "Jain Xi",
+      "isAdult": true
+    },
+    {
+      "name": {
+        "honourAfterName": "Sc.",
+        "firstName": "Mirek",
+        "middleNames": [
+        ],
+        "lastName": "Liliput"
+      },
+      "salutation": "Mr.",
+      "vocative": "Mirek",
+      "isAdult": true
+    }
+];
+
 // ------------ helper functions ------------
 
 // this function will send <data> as JSON and increase calls <limit> by 1
@@ -20,41 +76,28 @@ function sendBody(req, res, data, limit) {
 }
 
 // ------------ public API --------------
-// 3 GET requests
 
-app.get("/", function(req,res) {
-  console.log('** / requested');
-  console.log(JSON.stringify(req.headers));
-  console.log(JSON.stringify(req.params));
-  console.log(JSON.stringify(req.query));
-     res.json('{"ok": true}\n');
+app.get("/testing/accounts/:id", function(req, res) {
+    var accId = req.params.id;
+    if (accId && accounts[accId]) {
+        sendBody(req, res, accounts[accId], "testing=1");
+    } else {
+        res.status(404).json(
+            { "errors": [
+                    {
+                        "code": "OBJECT_NOT_FOUND",
+                        "message": "Cannot find specified account",
+                        "severity":"ERROR"
+                    }
+                ]
+            }
+            );
+    }
 });
 
-app.get("/testing/accounts/profile", function(req, res) {
-    var data = {
-
-        "UserId": "22c2a3c9-e976-49dd-9278-0e8b3a9193e2",
-    "PhoneNumber": "0967478085",
-    "FullName": "NGUYỄN TRƯỜNG SƠN",
-    "CUID": "4935925",
-    "IdNumber": "381455002",
-    "ContractNumber": "3689673526",
-    "Address": "X. Đất Mới, H. Năm Căn, Cà Mau",
-    "Gender": "M",
-    "GenderText": "Male",
-    "TicketCount": 0,
-    "NotificationCount": 0,
-    "Settings": [
-{
-    "DeviceId": "Default",
-    "Active": true,
-    "PushNotificationConsent": true
-}
-]
-};
-sendBody(req, res, data, "testing=1");
+app.get("/testing/accounts", function(req, res) {
+    sendBody(req, res, {"data": accounts}, "testing=1");
 });
-
 
 app.listen(port);
 console.log("Listening on port: " + port);

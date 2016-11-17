@@ -1,9 +1,591 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>API Documentation</title><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"><style>@import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Inconsolata|Raleway:200');.hljs-comment,.hljs-title{color:#8e908c}.hljs-variable,.hljs-attribute,.hljs-tag,.hljs-regexp,.ruby .hljs-constant,.xml .hljs-tag .hljs-title,.xml .hljs-pi,.xml .hljs-doctype,.html .hljs-doctype,.css .hljs-id,.css .hljs-class,.css .hljs-pseudo{color:#c82829}.hljs-number,.hljs-preprocessor,.hljs-pragma,.hljs-built_in,.hljs-literal,.hljs-params,.hljs-constant{color:#f5871f}.ruby .hljs-class .hljs-title,.css .hljs-rules .hljs-attribute{color:#eab700}.hljs-string,.hljs-value,.hljs-inheritance,.hljs-header,.ruby .hljs-symbol,.xml .hljs-cdata{color:#718c00}.css .hljs-hexcolor{color:#3e999f}.hljs-function,.python .hljs-decorator,.python .hljs-title,.ruby .hljs-function .hljs-title,.ruby .hljs-title .hljs-keyword,.perl .hljs-sub,.javascript .hljs-title,.coffeescript .hljs-title{color:#4271ae}.hljs-keyword,.javascript .hljs-function{color:#8959a8}.hljs{display:block;background:white;color:#4d4d4c;padding:.5em}.coffeescript .javascript,.javascript .xml,.tex .hljs-formula,.xml .javascript,.xml .vbscript,.xml .css,.xml .hljs-cdata{opacity:.5}.right .hljs-comment{color:#969896}.right .css .hljs-class,.right .css .hljs-id,.right .css .hljs-pseudo,.right .hljs-attribute,.right .hljs-regexp,.right .hljs-tag,.right .hljs-variable,.right .html .hljs-doctype,.right .ruby .hljs-constant,.right .xml .hljs-doctype,.right .xml .hljs-pi,.right .xml .hljs-tag .hljs-title{color:#c66}.right .hljs-built_in,.right .hljs-constant,.right .hljs-literal,.right .hljs-number,.right .hljs-params,.right .hljs-pragma,.right .hljs-preprocessor{color:#de935f}.right .css .hljs-rule .hljs-attribute,.right .ruby .hljs-class .hljs-title{color:#f0c674}.right .hljs-header,.right .hljs-inheritance,.right .hljs-name,.right .hljs-string,.right .hljs-value,.right .ruby .hljs-symbol,.right .xml .hljs-cdata{color:#b5bd68}.right .css .hljs-hexcolor,.right .hljs-title{color:#8abeb7}.right .coffeescript .hljs-title,.right .hljs-function,.right .javascript .hljs-title,.right .perl .hljs-sub,.right .python .hljs-decorator,.right .python .hljs-title,.right .ruby .hljs-function .hljs-title,.right .ruby .hljs-title .hljs-keyword{color:#81a2be}.right .hljs-keyword,.right .javascript .hljs-function{color:#b294bb}.right .hljs{display:block;overflow-x:auto;background:#1d1f21;color:#c5c8c6;padding:.5em;-webkit-text-size-adjust:none}.right .coffeescript .javascript,.right .javascript .xml,.right .tex .hljs-formula,.right .xml .css,.right .xml .hljs-cdata,.right .xml .javascript,.right .xml .vbscript{opacity:.5}body{color:black;background:white;font:400 14px / 1.42 'Roboto',Helvetica,sans-serif}header{border-bottom:1px solid #f2f2f2;margin-bottom:12px}h1,h2,h3,h4,h5{color:black;margin:12px 0}h1 .permalink,h2 .permalink,h3 .permalink,h4 .permalink,h5 .permalink{margin-left:0;opacity:0;transition:opacity .25s ease}h1:hover .permalink,h2:hover .permalink,h3:hover .permalink,h4:hover .permalink,h5:hover .permalink{opacity:1}.triple h1 .permalink,.triple h2 .permalink,.triple h3 .permalink,.triple h4 .permalink,.triple h5 .permalink{opacity:.15}.triple h1:hover .permalink,.triple h2:hover .permalink,.triple h3:hover .permalink,.triple h4:hover .permalink,.triple h5:hover .permalink{opacity:.15}h1{font:200 36px 'Raleway',Helvetica,sans-serif;font-size:36px}h2{font:200 36px 'Raleway',Helvetica,sans-serif;font-size:30px}h3{font-size:100%;text-transform:uppercase}h5{font-size:100%;font-weight:normal}p{margin:0 0 10px}p.choices{line-height:1.6}a{color:#428bca;text-decoration:none}li p{margin:0}hr.split{border:0;height:1px;width:100%;padding-left:6px;margin:12px auto;background-image:linear-gradient(to right, rgba(0,0,0,0) 20%, rgba(0,0,0,0.2) 51.4%, rgba(255,255,255,0.2) 51.4%, rgba(255,255,255,0) 80%)}dl dt{float:left;width:130px;clear:left;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:700}dl dd{margin-left:150px}blockquote{color:rgba(0,0,0,0.5);font-size:15.5px;padding:10px 20px;margin:12px 0;border-left:5px solid #e8e8e8}blockquote p:last-child{margin-bottom:0}pre{background-color:#f5f5f5;padding:12px;border:1px solid #cfcfcf;border-radius:6px;overflow:auto}pre code{color:black;background-color:transparent;padding:0;border:none}code{color:#444;background-color:#f5f5f5;font:'Inconsolata',monospace;padding:1px 4px;border:1px solid #cfcfcf;border-radius:3px}ul,ol{padding-left:2em}table{border-collapse:collapse;border-spacing:0;margin-bottom:12px}table tr:nth-child(2n){background-color:#fafafa}table th,table td{padding:6px 12px;border:1px solid #e6e6e6}.text-muted{opacity:.5}.note,.warning{padding:.3em 1em;margin:1em 0;border-radius:2px;font-size:90%}.note h1,.warning h1,.note h2,.warning h2,.note h3,.warning h3,.note h4,.warning h4,.note h5,.warning h5,.note h6,.warning h6{font-family:200 36px 'Raleway',Helvetica,sans-serif;font-size:135%;font-weight:500}.note p,.warning p{margin:.5em 0}.note{color:black;background-color:#f0f6fb;border-left:4px solid #428bca}.note h1,.note h2,.note h3,.note h4,.note h5,.note h6{color:#428bca}.warning{color:black;background-color:#fbf1f0;border-left:4px solid #c9302c}.warning h1,.warning h2,.warning h3,.warning h4,.warning h5,.warning h6{color:#c9302c}header{margin-top:24px}nav{position:fixed;top:24px;bottom:0;overflow-y:auto}nav .resource-group{padding:0}nav .resource-group .heading{position:relative}nav .resource-group .heading .chevron{position:absolute;top:12px;right:12px;opacity:.5}nav .resource-group .heading a{display:block;color:black;opacity:.7;border-left:2px solid transparent;margin:0}nav .resource-group .heading a:hover{text-decoration:none;background-color:bad-color;border-left:2px solid black}nav ul{list-style-type:none;padding-left:0}nav ul a{display:block;font-size:13px;color:rgba(0,0,0,0.7);padding:8px 12px;border-top:1px solid #d9d9d9;border-left:2px solid transparent;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}nav ul a:hover{text-decoration:none;background-color:bad-color;border-left:2px solid black}nav ul>li{margin:0}nav ul>li:first-child{margin-top:-12px}nav ul>li:last-child{margin-bottom:-12px}nav ul ul a{padding-left:24px}nav ul ul li{margin:0}nav ul ul li:first-child{margin-top:0}nav ul ul li:last-child{margin-bottom:0}nav>div>div>ul>li:first-child>a{border-top:none}.preload *{transition:none !important}.pull-left{float:left}.pull-right{float:right}.badge{display:inline-block;float:right;min-width:10px;min-height:14px;padding:3px 7px;font-size:12px;color:#000;background-color:#f2f2f2;border-radius:10px;margin:-2px 0}.badge.get{color:#70bbe1;background-color:#d9edf7}.badge.head{color:#70bbe1;background-color:#d9edf7}.badge.options{color:#70bbe1;background-color:#d9edf7}.badge.put{color:#f0db70;background-color:#fcf8e3}.badge.patch{color:#f0db70;background-color:#fcf8e3}.badge.post{color:#93cd7c;background-color:#dff0d8}.badge.delete{color:#ce8383;background-color:#f2dede}.collapse-button{float:right}.collapse-button .close{display:none;color:#428bca;cursor:pointer}.collapse-button .open{color:#428bca;cursor:pointer}.collapse-button.show .close{display:inline}.collapse-button.show .open{display:none}.collapse-content{max-height:0;overflow:hidden;transition:max-height .3s ease-in-out}nav{width:220px}.container{max-width:940px;margin-left:auto;margin-right:auto}.container .row .content{margin-left:244px;width:696px}.container .row:after{content:'';display:block;clear:both}.container-fluid nav{width:22%}.container-fluid .row .content{margin-left:24%}.container-fluid.triple nav{width:16.5%;padding-right:1px}.container-fluid.triple .row .content{position:relative;margin-left:16.5%;padding-left:24px}.middle:before,.middle:after{content:'';display:table}.middle:after{clear:both}.middle{box-sizing:border-box;width:51.5%;padding-right:12px}.right{box-sizing:border-box;float:right;width:48.5%;padding-left:12px}.right a{color:#428bca}.right h1,.right h2,.right h3,.right h4,.right h5,.right p,.right div{color:white}.right pre{background-color:#1d1f21;border:1px solid #1d1f21}.right pre code{color:#c5c8c6}.right .description{margin-top:12px}.triple .resource-heading{font-size:125%}.definition{margin-top:12px;margin-bottom:12px}.definition .method{font-weight:bold}.definition .method.get{color:#2e8ab8}.definition .method.head{color:#2e8ab8}.definition .method.options{color:#2e8ab8}.definition .method.post{color:#56b82e}.definition .method.put{color:#b8a22e}.definition .method.patch{color:#b8a22e}.definition .method.delete{color:#b82e2e}.definition .uri{word-break:break-all;word-wrap:break-word}.definition .hostname{opacity:.5}.example-names{background-color:#eee;padding:12px;border-radius:6px}.example-names .tab-button{cursor:pointer;color:black;border:1px solid #ddd;padding:6px;margin-left:12px}.example-names .tab-button.active{background-color:#d5d5d5}.right .example-names{background-color:#444}.right .example-names .tab-button{color:white;border:1px solid #666;border-radius:6px}.right .example-names .tab-button.active{background-color:#5e5e5e}#nav-background{position:fixed;left:0;top:0;bottom:0;width:16.5%;padding-right:14.4px;background-color:#fbfbfb;border-right:1px solid #f0f0f0;z-index:-1}#right-panel-background{position:absolute;right:-12px;top:-12px;bottom:-12px;width:48.6%;background-color:#333;z-index:-1}@media (max-width:1200px){nav{width:198px}.container{max-width:840px}.container .row .content{margin-left:224px;width:606px}}@media (max-width:992px){nav{width:169.4px}.container{max-width:720px}.container .row .content{margin-left:194px;width:526px}}@media (max-width:768px){nav{display:none}.container{width:95%;max-width:none}.container .row .content,.container-fluid .row .content,.container-fluid.triple .row .content{margin-left:auto;margin-right:auto;width:95%}#nav-background{display:none}#right-panel-background{width:48.6%}}.back-to-top{position:fixed;z-index:1;bottom:0;right:24px;padding:4px 8px;color:rgba(0,0,0,0.5);background-color:#f2f2f2;text-decoration:none !important;border-top:1px solid #d9d9d9;border-left:1px solid #d9d9d9;border-right:1px solid #d9d9d9;border-top-left-radius:3px;border-top-right-radius:3px}.resource-group{padding:12px;margin-bottom:12px;background-color:white;border:1px solid #d9d9d9;border-radius:6px}.resource-group h2.group-heading,.resource-group .heading a{padding:12px;margin:-12px -12px 12px -12px;background-color:#f2f2f2;border-bottom:1px solid #d9d9d9;border-top-left-radius:6px;border-top-right-radius:6px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.triple .content .resource-group{padding:0;border:none}.triple .content .resource-group h2.group-heading,.triple .content .resource-group .heading a{margin:0 0 12px 0;border:1px solid #d9d9d9}nav .resource-group .heading a{padding:12px;margin-bottom:0}nav .resource-group .collapse-content{padding:0}.action{margin-bottom:12px;padding:12px 12px 0 12px;overflow:hidden;border:1px solid transparent;border-radius:6px}.action h4.action-heading{padding:6px 12px;margin:-12px -12px 12px -12px;border-bottom:1px solid transparent;border-top-left-radius:6px;border-top-right-radius:6px;overflow:hidden}.action h4.action-heading .name{float:right;font-weight:normal;padding:6px 0}.action h4.action-heading .method{padding:6px 12px;margin-right:12px;border-radius:3px;display:inline-block}.action h4.action-heading .method.get{color:#000;background-color:#337ab7}.action h4.action-heading .method.head{color:#000;background-color:#337ab7}.action h4.action-heading .method.options{color:#000;background-color:#337ab7}.action h4.action-heading .method.put{color:#000;background-color:#ed9c28}.action h4.action-heading .method.patch{color:#000;background-color:#ed9c28}.action h4.action-heading .method.post{color:#000;background-color:#5cb85c}.action h4.action-heading .method.delete{color:#000;background-color:#d9534f}.action h4.action-heading code{color:#444;background-color:#f5f5f5;border-color:#cfcfcf;font-weight:normal;word-break:break-all;display:inline-block;margin-top:2px}.action dl.inner{padding-bottom:2px}.action .title{border-bottom:1px solid white;margin:0 -12px -1px -12px;padding:12px}.action.get{border-color:#bce8f1}.action.get h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.head{border-color:#bce8f1}.action.head h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.options{border-color:#bce8f1}.action.options h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.post{border-color:#d6e9c6}.action.post h4.action-heading{color:#5cb85c;background:#dff0d8;border-bottom-color:#d6e9c6}.action.put{border-color:#faebcc}.action.put h4.action-heading{color:#ed9c28;background:#fcf8e3;border-bottom-color:#faebcc}.action.patch{border-color:#faebcc}.action.patch h4.action-heading{color:#ed9c28;background:#fcf8e3;border-bottom-color:#faebcc}.action.delete{border-color:#ebccd1}.action.delete h4.action-heading{color:#d9534f;background:#f2dede;border-bottom-color:#ebccd1}</style></head><body class="preload"><div id="nav-background"></div><div class="container-fluid triple"><div class="row"><nav><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#security">Security</a></div><div class="collapse-content"><ul></ul></div></div></nav><div class="content"><div id="right-panel-background"></div><div class="middle"><header><h1 id="top">API Documentation</h1></header></div><div class="right"><h5>API Endpoint</h5><a></a></div><div class="middle"><p>:<a href="src/includes/description.apib">Description</a></p>
-</div><div class="middle"><section id="security" class="resource-group"><h2 class="group-heading">Security <a href="#security" class="permalink">&para;</a></h2><p>:<a href="src/includes/group-api-keys.apib">Group API keys</a></p>
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Open API</title><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"><style>@import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Inconsolata|Raleway:200');.hljs-comment,.hljs-title{color:#8e908c}.hljs-variable,.hljs-attribute,.hljs-tag,.hljs-regexp,.ruby .hljs-constant,.xml .hljs-tag .hljs-title,.xml .hljs-pi,.xml .hljs-doctype,.html .hljs-doctype,.css .hljs-id,.css .hljs-class,.css .hljs-pseudo{color:#c82829}.hljs-number,.hljs-preprocessor,.hljs-pragma,.hljs-built_in,.hljs-literal,.hljs-params,.hljs-constant{color:#f5871f}.ruby .hljs-class .hljs-title,.css .hljs-rules .hljs-attribute{color:#eab700}.hljs-string,.hljs-value,.hljs-inheritance,.hljs-header,.ruby .hljs-symbol,.xml .hljs-cdata{color:#718c00}.css .hljs-hexcolor{color:#3e999f}.hljs-function,.python .hljs-decorator,.python .hljs-title,.ruby .hljs-function .hljs-title,.ruby .hljs-title .hljs-keyword,.perl .hljs-sub,.javascript .hljs-title,.coffeescript .hljs-title{color:#4271ae}.hljs-keyword,.javascript .hljs-function{color:#8959a8}.hljs{display:block;background:white;color:#4d4d4c;padding:.5em}.coffeescript .javascript,.javascript .xml,.tex .hljs-formula,.xml .javascript,.xml .vbscript,.xml .css,.xml .hljs-cdata{opacity:.5}.right .hljs-comment{color:#969896}.right .css .hljs-class,.right .css .hljs-id,.right .css .hljs-pseudo,.right .hljs-attribute,.right .hljs-regexp,.right .hljs-tag,.right .hljs-variable,.right .html .hljs-doctype,.right .ruby .hljs-constant,.right .xml .hljs-doctype,.right .xml .hljs-pi,.right .xml .hljs-tag .hljs-title{color:#c66}.right .hljs-built_in,.right .hljs-constant,.right .hljs-literal,.right .hljs-number,.right .hljs-params,.right .hljs-pragma,.right .hljs-preprocessor{color:#de935f}.right .css .hljs-rule .hljs-attribute,.right .ruby .hljs-class .hljs-title{color:#f0c674}.right .hljs-header,.right .hljs-inheritance,.right .hljs-name,.right .hljs-string,.right .hljs-value,.right .ruby .hljs-symbol,.right .xml .hljs-cdata{color:#b5bd68}.right .css .hljs-hexcolor,.right .hljs-title{color:#8abeb7}.right .coffeescript .hljs-title,.right .hljs-function,.right .javascript .hljs-title,.right .perl .hljs-sub,.right .python .hljs-decorator,.right .python .hljs-title,.right .ruby .hljs-function .hljs-title,.right .ruby .hljs-title .hljs-keyword{color:#81a2be}.right .hljs-keyword,.right .javascript .hljs-function{color:#b294bb}.right .hljs{display:block;overflow-x:auto;background:#1d1f21;color:#c5c8c6;padding:.5em;-webkit-text-size-adjust:none}.right .coffeescript .javascript,.right .javascript .xml,.right .tex .hljs-formula,.right .xml .css,.right .xml .hljs-cdata,.right .xml .javascript,.right .xml .vbscript{opacity:.5}body{color:black;background:white;font:400 14px / 1.42 'Roboto',Helvetica,sans-serif}header{border-bottom:1px solid #f2f2f2;margin-bottom:12px}h1,h2,h3,h4,h5{color:black;margin:12px 0}h1 .permalink,h2 .permalink,h3 .permalink,h4 .permalink,h5 .permalink{margin-left:0;opacity:0;transition:opacity .25s ease}h1:hover .permalink,h2:hover .permalink,h3:hover .permalink,h4:hover .permalink,h5:hover .permalink{opacity:1}.triple h1 .permalink,.triple h2 .permalink,.triple h3 .permalink,.triple h4 .permalink,.triple h5 .permalink{opacity:.15}.triple h1:hover .permalink,.triple h2:hover .permalink,.triple h3:hover .permalink,.triple h4:hover .permalink,.triple h5:hover .permalink{opacity:.15}h1{font:200 36px 'Raleway',Helvetica,sans-serif;font-size:36px}h2{font:200 36px 'Raleway',Helvetica,sans-serif;font-size:30px}h3{font-size:100%;text-transform:uppercase}h5{font-size:100%;font-weight:normal}p{margin:0 0 10px}p.choices{line-height:1.6}a{color:#428bca;text-decoration:none}li p{margin:0}hr.split{border:0;height:1px;width:100%;padding-left:6px;margin:12px auto;background-image:linear-gradient(to right, rgba(0,0,0,0) 20%, rgba(0,0,0,0.2) 51.4%, rgba(255,255,255,0.2) 51.4%, rgba(255,255,255,0) 80%)}dl dt{float:left;width:130px;clear:left;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:700}dl dd{margin-left:150px}blockquote{color:rgba(0,0,0,0.5);font-size:15.5px;padding:10px 20px;margin:12px 0;border-left:5px solid #e8e8e8}blockquote p:last-child{margin-bottom:0}pre{background-color:#f5f5f5;padding:12px;border:1px solid #cfcfcf;border-radius:6px;overflow:auto}pre code{color:black;background-color:transparent;padding:0;border:none}code{color:#444;background-color:#f5f5f5;font:'Inconsolata',monospace;padding:1px 4px;border:1px solid #cfcfcf;border-radius:3px}ul,ol{padding-left:2em}table{border-collapse:collapse;border-spacing:0;margin-bottom:12px}table tr:nth-child(2n){background-color:#fafafa}table th,table td{padding:6px 12px;border:1px solid #e6e6e6}.text-muted{opacity:.5}.note,.warning{padding:.3em 1em;margin:1em 0;border-radius:2px;font-size:90%}.note h1,.warning h1,.note h2,.warning h2,.note h3,.warning h3,.note h4,.warning h4,.note h5,.warning h5,.note h6,.warning h6{font-family:200 36px 'Raleway',Helvetica,sans-serif;font-size:135%;font-weight:500}.note p,.warning p{margin:.5em 0}.note{color:black;background-color:#f0f6fb;border-left:4px solid #428bca}.note h1,.note h2,.note h3,.note h4,.note h5,.note h6{color:#428bca}.warning{color:black;background-color:#fbf1f0;border-left:4px solid #c9302c}.warning h1,.warning h2,.warning h3,.warning h4,.warning h5,.warning h6{color:#c9302c}header{margin-top:24px}nav{position:fixed;top:24px;bottom:0;overflow-y:auto}nav .resource-group{padding:0}nav .resource-group .heading{position:relative}nav .resource-group .heading .chevron{position:absolute;top:12px;right:12px;opacity:.5}nav .resource-group .heading a{display:block;color:black;opacity:.7;border-left:2px solid transparent;margin:0}nav .resource-group .heading a:hover{text-decoration:none;background-color:bad-color;border-left:2px solid black}nav ul{list-style-type:none;padding-left:0}nav ul a{display:block;font-size:13px;color:rgba(0,0,0,0.7);padding:8px 12px;border-top:1px solid #d9d9d9;border-left:2px solid transparent;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}nav ul a:hover{text-decoration:none;background-color:bad-color;border-left:2px solid black}nav ul>li{margin:0}nav ul>li:first-child{margin-top:-12px}nav ul>li:last-child{margin-bottom:-12px}nav ul ul a{padding-left:24px}nav ul ul li{margin:0}nav ul ul li:first-child{margin-top:0}nav ul ul li:last-child{margin-bottom:0}nav>div>div>ul>li:first-child>a{border-top:none}.preload *{transition:none !important}.pull-left{float:left}.pull-right{float:right}.badge{display:inline-block;float:right;min-width:10px;min-height:14px;padding:3px 7px;font-size:12px;color:#000;background-color:#f2f2f2;border-radius:10px;margin:-2px 0}.badge.get{color:#70bbe1;background-color:#d9edf7}.badge.head{color:#70bbe1;background-color:#d9edf7}.badge.options{color:#70bbe1;background-color:#d9edf7}.badge.put{color:#f0db70;background-color:#fcf8e3}.badge.patch{color:#f0db70;background-color:#fcf8e3}.badge.post{color:#93cd7c;background-color:#dff0d8}.badge.delete{color:#ce8383;background-color:#f2dede}.collapse-button{float:right}.collapse-button .close{display:none;color:#428bca;cursor:pointer}.collapse-button .open{color:#428bca;cursor:pointer}.collapse-button.show .close{display:inline}.collapse-button.show .open{display:none}.collapse-content{max-height:0;overflow:hidden;transition:max-height .3s ease-in-out}nav{width:220px}.container{max-width:940px;margin-left:auto;margin-right:auto}.container .row .content{margin-left:244px;width:696px}.container .row:after{content:'';display:block;clear:both}.container-fluid nav{width:22%}.container-fluid .row .content{margin-left:24%}.container-fluid.triple nav{width:16.5%;padding-right:1px}.container-fluid.triple .row .content{position:relative;margin-left:16.5%;padding-left:24px}.middle:before,.middle:after{content:'';display:table}.middle:after{clear:both}.middle{box-sizing:border-box;width:51.5%;padding-right:12px}.right{box-sizing:border-box;float:right;width:48.5%;padding-left:12px}.right a{color:#428bca}.right h1,.right h2,.right h3,.right h4,.right h5,.right p,.right div{color:white}.right pre{background-color:#1d1f21;border:1px solid #1d1f21}.right pre code{color:#c5c8c6}.right .description{margin-top:12px}.triple .resource-heading{font-size:125%}.definition{margin-top:12px;margin-bottom:12px}.definition .method{font-weight:bold}.definition .method.get{color:#2e8ab8}.definition .method.head{color:#2e8ab8}.definition .method.options{color:#2e8ab8}.definition .method.post{color:#56b82e}.definition .method.put{color:#b8a22e}.definition .method.patch{color:#b8a22e}.definition .method.delete{color:#b82e2e}.definition .uri{word-break:break-all;word-wrap:break-word}.definition .hostname{opacity:.5}.example-names{background-color:#eee;padding:12px;border-radius:6px}.example-names .tab-button{cursor:pointer;color:black;border:1px solid #ddd;padding:6px;margin-left:12px}.example-names .tab-button.active{background-color:#d5d5d5}.right .example-names{background-color:#444}.right .example-names .tab-button{color:white;border:1px solid #666;border-radius:6px}.right .example-names .tab-button.active{background-color:#5e5e5e}#nav-background{position:fixed;left:0;top:0;bottom:0;width:16.5%;padding-right:14.4px;background-color:#fbfbfb;border-right:1px solid #f0f0f0;z-index:-1}#right-panel-background{position:absolute;right:-12px;top:-12px;bottom:-12px;width:48.6%;background-color:#333;z-index:-1}@media (max-width:1200px){nav{width:198px}.container{max-width:840px}.container .row .content{margin-left:224px;width:606px}}@media (max-width:992px){nav{width:169.4px}.container{max-width:720px}.container .row .content{margin-left:194px;width:526px}}@media (max-width:768px){nav{display:none}.container{width:95%;max-width:none}.container .row .content,.container-fluid .row .content,.container-fluid.triple .row .content{margin-left:auto;margin-right:auto;width:95%}#nav-background{display:none}#right-panel-background{width:48.6%}}.back-to-top{position:fixed;z-index:1;bottom:0;right:24px;padding:4px 8px;color:rgba(0,0,0,0.5);background-color:#f2f2f2;text-decoration:none !important;border-top:1px solid #d9d9d9;border-left:1px solid #d9d9d9;border-right:1px solid #d9d9d9;border-top-left-radius:3px;border-top-right-radius:3px}.resource-group{padding:12px;margin-bottom:12px;background-color:white;border:1px solid #d9d9d9;border-radius:6px}.resource-group h2.group-heading,.resource-group .heading a{padding:12px;margin:-12px -12px 12px -12px;background-color:#f2f2f2;border-bottom:1px solid #d9d9d9;border-top-left-radius:6px;border-top-right-radius:6px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.triple .content .resource-group{padding:0;border:none}.triple .content .resource-group h2.group-heading,.triple .content .resource-group .heading a{margin:0 0 12px 0;border:1px solid #d9d9d9}nav .resource-group .heading a{padding:12px;margin-bottom:0}nav .resource-group .collapse-content{padding:0}.action{margin-bottom:12px;padding:12px 12px 0 12px;overflow:hidden;border:1px solid transparent;border-radius:6px}.action h4.action-heading{padding:6px 12px;margin:-12px -12px 12px -12px;border-bottom:1px solid transparent;border-top-left-radius:6px;border-top-right-radius:6px;overflow:hidden}.action h4.action-heading .name{float:right;font-weight:normal;padding:6px 0}.action h4.action-heading .method{padding:6px 12px;margin-right:12px;border-radius:3px;display:inline-block}.action h4.action-heading .method.get{color:#000;background-color:#337ab7}.action h4.action-heading .method.head{color:#000;background-color:#337ab7}.action h4.action-heading .method.options{color:#000;background-color:#337ab7}.action h4.action-heading .method.put{color:#000;background-color:#ed9c28}.action h4.action-heading .method.patch{color:#000;background-color:#ed9c28}.action h4.action-heading .method.post{color:#000;background-color:#5cb85c}.action h4.action-heading .method.delete{color:#000;background-color:#d9534f}.action h4.action-heading code{color:#444;background-color:#f5f5f5;border-color:#cfcfcf;font-weight:normal;word-break:break-all;display:inline-block;margin-top:2px}.action dl.inner{padding-bottom:2px}.action .title{border-bottom:1px solid white;margin:0 -12px -1px -12px;padding:12px}.action.get{border-color:#bce8f1}.action.get h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.head{border-color:#bce8f1}.action.head h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.options{border-color:#bce8f1}.action.options h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.post{border-color:#d6e9c6}.action.post h4.action-heading{color:#5cb85c;background:#dff0d8;border-bottom-color:#d6e9c6}.action.put{border-color:#faebcc}.action.put h4.action-heading{color:#ed9c28;background:#fcf8e3;border-bottom-color:#faebcc}.action.patch{border-color:#faebcc}.action.patch h4.action-heading{color:#ed9c28;background:#fcf8e3;border-bottom-color:#faebcc}.action.delete{border-color:#ebccd1}.action.delete h4.action-heading{color:#d9534f;background:#f2dede;border-bottom-color:#ebccd1}</style></head><body class="preload"><div id="nav-background"></div><div class="container-fluid triple"><div class="row"><nav><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#top">Overview</a></div><div class="collapse-content"><ul><li><a href="#header-naming-conventions">Naming conventions</a></li><li><a href="#header-paging">Paging</a></li><li><a href="#header-sorting">Sorting</a></li><li><a href="#header-filtering">Filtering</a></li><li><a href="#header-filtering-examples">Filtering examples</a></li><li><a href="#header-list-of-operators">List of operators</a></li><li><a href="#header-api-calls-limits">API calls limits</a></li><li><a href="#header-bandwith-usage-reducing">Bandwith usage reducing</a></li><li><a href="#header-fields-attribute">Fields attribute</a></li><li><a href="#header-gzip-compression">GZIP compression</a></li><li><a href="#header-versioning">Versioning</a></li><li><a href="#header-language">Language</a></li><li><a href="#header-response-encoding">Response encoding</a></li><li><a href="#header-http-status-codes">HTTP status codes</a></li><li><a href="#header-api-usage-limits">API usage limits</a></li><li><a href="#header-error-handling">Error handling</a></li><li><a href="#header-most-important-error-codes">Most important error codes</a></li><li><a href="#header-formats">Formats</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#security">Security</a></div><div class="collapse-content"><ul><li><a href="#header-security-concept-of-open-api">Security concept of Open API</a></li><li><a href="#header-public-services-prefix-testing">Public services - prefix /testing</a></li><li><a href="#header-api-key">API key</a></li><li><a href="#header-obtaining-api-key">Obtaining API key</a></li><li><a href="#header-using-api-key">Using API key</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#accounts">Accounts</a></div><div class="collapse-content"><ul><li><a href="#accounts-single-account-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get account details</a></li><li><a href="#accounts-accounts-list-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get list of accounts</a></li></ul></div></div></nav><div class="content"><div id="right-panel-background"></div><div class="middle"><header><h1 id="top">Open API</h1></header></div><div class="right"><h5>API Endpoint</h5><a></a></div><div class="middle"><p>This is documentation of the REST API for Testing API.</p>
+<p>There are some rules that are valid throughout whole API.</p>
+<h2 id="header-naming-conventions">Naming conventions <a class="permalink" href="#header-naming-conventions" aria-hidden="true">¶</a></h2>
+<ul>
+<li>
+<p>we use camelCase for all object and property names</p>
+</li>
+<li>
+<p>we use plural in resource names</p>
+</li>
+</ul>
+<h2 id="header-paging">Paging <a class="permalink" href="#header-paging" aria-hidden="true">¶</a></h2>
+<ul>
+<li>
+<p>some resources (stated in documentation) that return collection of objects support pagination.</p>
+</li>
+<li>
+<p>on request:</p>
+<ul>
+<li>query parameter <code>limit</code> specifies maximum number of objects in returned collection</li>
+<li>query parameter <code>after</code> specifies last object retrieved in previous request. Its value is usually <code>id</code> of last object retrieved in previous call, but this will be stated in documentation. Parameter <code>after</code> is used when traversing collection forwards.</li>
+<li>query parameter <code>before</code> specifies first object retrieved in previous request (analogy to <code>after</code> parameter), and is used when traversing collection backwards.</li>
+<li>if <code>before</code> and <code>after</code> are omitted, beginning of collection is returned, using specified sort order</li>
+<li>items in collection are always sorted accoridng to attribute which could be passed in after/before parameters. Even if you specify different sorting order, this attribute will be last sorting criterion; if you do not specify sorting order, result collection will be sorted according to this attribute.</li>
+</ul>
+</li>
+<li>
+<p>on response:</p>
+<ul>
+<li><code>pagingInfo</code> object is returned as part of response body with following attributes:
+<ul>
+<li><em>nextPage</em> - request to retrieve next page. Either nextPage or previousPage is returned, depending whether you specify <code>after</code> or <code>before</code> parameter. If you specify neither <code>before</code> nor <code>after</code> parameter, these attributes will be omitted from response.</li>
+<li><em>prevPage</em> - request to retrieve previous page (see <code>nextPage</code> attribute description above).</li>
+<li><em>itemsPerPage</em> - number of items per page</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Example request:</p>
+<pre><code><span class="hljs-label">curl</span> -X <span class="hljs-preprocessor">GET</span> https://api.homecredit.vn/<span class="hljs-literal">v1</span>/<span class="hljs-keyword">banking/transactions?sort=category&amp;limit=10&amp;after=15
+</span></code></pre>
+<p>Example response pagingInfo:</p>
+<pre><code class="language-javascript"><span class="hljs-string">"pagingInfo"</span>: {
+    <span class="hljs-string">"nextPage"</span>: <span class="hljs-string">"transactions?sort=category&amp;limit=10&amp;after=25"</span>
+    <span class="hljs-string">"itemsPerPage"</span>: <span class="hljs-number">10</span>,
+}</code></pre>
+<h2 id="header-sorting">Sorting <a class="permalink" href="#header-sorting" aria-hidden="true">¶</a></h2>
+<ul>
+<li>
+<p>some resources (stated in documentation) suppors result sorting. You can specify sorting attributes and order using <code>sort</code> request parameter. For ascending order, specify just attribute name; for descending order, add unary - in front of attribute name. You can specify multiple attributes for sorting, separated by comma.</p>
+</li>
+<li>
+<p>each resource that supports sorting specifies list of attributes that can be used for sorting.</p>
+</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li>
+<p><code>/public/fxrates?sort=currencyCode</code> - get list of FX rates sorted by attribute currencyCode</p>
+</li>
+<li>
+<p><code>/public/branches?sort=-name</code> - get list of branches, sorted by attribute name in descending order</p>
+</li>
+<li>
+<p><code>/banking/accounts?sort=accountType,-accountCurrency,accountName</code> - get list of accounts, sorted by type (ascending), then by currency descending and then by account name (ascending)</p>
+</li>
+</ul>
+<h2 id="header-filtering">Filtering <a class="permalink" href="#header-filtering" aria-hidden="true">¶</a></h2>
+<p>Some resources (stated in documentation) supports results filtering. Such resources have list of filters specified together with possible operations and possible values.</p>
+<p>You can specify filtering by passing <code>filter</code> attribute. General pattern to specify filter is:</p>
+<p><code>&lt;filterName&gt;|&lt;operator&gt;|&lt;values&gt;</code></p>
+<ul>
+<li>
+<p><code>filterName</code> - filter name from documentation</p>
+</li>
+<li>
+<p><code>operator</code> - operator, specified in resource documentation</p>
+</li>
+<li>
+<p><code>values</code> - one or more values for filter. Multiple values are separated by comma</p>
+</li>
+</ul>
+<p>Multiple filters can be specified on each request, separated by semi-colon. They are joined by “AND”, so each result item must satisfy all conditions.</p>
+<h3 id="header-filtering-examples">Filtering examples <a class="permalink" href="#header-filtering-examples" aria-hidden="true">¶</a></h3>
+<ul>
+<li>get a list of incoming transactions</li>
+</ul>
+<pre><code>GET /banking/transactions?filter=direction|<span class="hljs-string">eq</span>|INCOMING</code></pre>
+<ul>
+<li>get a list of transactions with category in (1, 5, 10)</li>
+</ul>
+<pre><code>GET /banking/transactions?filter=category|in|<span class="hljs-number">1</span>,<span class="hljs-number">5</span>,<span class="hljs-number">10</span></code></pre>
+<ul>
+<li>get a list of transactions with valueDate in (2016-02-10, 2016-04-28&gt;</li>
+</ul>
+<pre><code>GET /banking/transactions?filter=valueDate|gt|<span class="hljs-number">2016</span>-<span class="hljs-number">02</span>-<span class="hljs-number">10</span>;valueDate|lteq|<span class="hljs-number">2016</span>-<span class="hljs-number">04</span>-<span class="hljs-number">28</span></code></pre>
+<h3 id="header-list-of-operators">List of operators <a class="permalink" href="#header-list-of-operators" aria-hidden="true">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>operator</th>
+<th>meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lt</td>
+<td>less than</td>
+</tr>
+<tr>
+<td>lteq</td>
+<td>less than or equals</td>
+</tr>
+<tr>
+<td>eq</td>
+<td>equals</td>
+</tr>
+<tr>
+<td>gteq</td>
+<td>greater than or equals</td>
+</tr>
+<tr>
+<td>gt</td>
+<td>greater than</td>
+</tr>
+<tr>
+<td>in</td>
+<td>value in list</td>
+</tr>
+</tbody>
+</table>
+<h2 id="header-api-calls-limits">API calls limits <a class="permalink" href="#header-api-calls-limits" aria-hidden="true">¶</a></h2>
+<p>When limit is reached, you receive HTTP error 429. To inform you about limits we use following headers:</p>
+<ul>
+<li>
+<p><code>X-Rate-Limit-Limit</code> - The number of allowed requests in the current period</p>
+</li>
+<li>
+<p><code>X-Rate-Limit-Remaining</code> - The number of remaining requests in the current period</p>
+</li>
+<li>
+<p><code>X-Rate-Limit-Reset</code> - The number of seconds left in the current period</p>
+</li>
+</ul>
+<h2 id="header-bandwith-usage-reducing">Bandwith usage reducing <a class="permalink" href="#header-bandwith-usage-reducing" aria-hidden="true">¶</a></h2>
+<h3 id="header-fields-attribute">Fields attribute <a class="permalink" href="#header-fields-attribute" aria-hidden="true">¶</a></h3>
+<ul>
+<li>
+<p>for all GET resources, you can use optional <code>fields</code> query parameter to limit objects’ attributes returned in response</p>
+</li>
+<li>
+<p><code>fields</code> parameter contains comma-separated list of attributes, that will be present in response; if omitted, all objects’ attributes will be returned</p>
+</li>
+<li>
+<p>you can specify only top-level attributes in <code>fields</code> parameter. This means that when response is an object, you can only specify top-level attributes. When response is an array of objects, only top-level attributes of those objects can be specified.</p>
+</li>
+<li>
+<p>if you specify non-existent attribute or atttribute that is not in first level, you will receive HTTP status <code>400 Bad Request</code></p>
+</li>
+<li>
+<p><code>fields</code> parameter has no effect on resources that returns plain value or array of plain values.</p>
+</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li><code>/public/branches?fields=id,name,location</code> - only get list of branches with id, name and location attributes</li>
+</ul>
+<h3 id="header-gzip-compression">GZIP compression <a class="permalink" href="#header-gzip-compression" aria-hidden="true">¶</a></h3>
+<ul>
+<li>we support GZIP compression of responses. Client must specify header <code>Accept-Encoding: gzip</code> in request in order to use the compression.</li>
+</ul>
+<h2 id="header-versioning">Versioning <a class="permalink" href="#header-versioning" aria-hidden="true">¶</a></h2>
+<p>We use API version in URL (e.g. <code>https://api.bank.cz/api/v2/banking/accounts</code>). Minor changes (see below) that don’t break backwards compatibility do NOT increase API version, e.g. they may happen without prior notice and your application should be ready to handle them.</p>
+<p>Minor changes include:</p>
+<ul>
+<li>
+<p>adding new resource</p>
+</li>
+<li>
+<p>adding new optional header/URL parameter or optional body attribute to request</p>
+</li>
+<li>
+<p>adding new attribute to response body</p>
+</li>
+<li>
+<p>adding new error codes and messages, provided that error structure is the same</p>
+</li>
+</ul>
+<h2 id="header-language">Language <a class="permalink" href="#header-language" aria-hidden="true">¶</a></h2>
+<p>We use English.</p>
+<h2 id="header-response-encoding">Response encoding <a class="permalink" href="#header-response-encoding" aria-hidden="true">¶</a></h2>
+<p>Unless stated otherwise, all responses are sent as <code>Content-Type: application/json;charset=UTF-8</code></p>
+<h2 id="header-http-status-codes">HTTP status codes <a class="permalink" href="#header-http-status-codes" aria-hidden="true">¶</a></h2>
+<p>We use following status codes throughout the API, except for OAuth flow when response codes are prescribed in RFC</p>
+<ul>
+<li>
+<p>200 <code>OK</code> - request was successful</p>
+</li>
+<li>
+<p>201 <code>Created</code> - request was successfull and resource was created</p>
+</li>
+<li>
+<p>204 <code>No content</code> - we accepted your request but there is nothing to return (e.g. response is empty)</p>
+</li>
+<li>
+<p>400 <code>Bad Request</code> - syntax error, e.g. request is missing required parameters/attributes or parameter values are of incorrect type</p>
+</li>
+<li>
+<p>401 <code>Unauthorized</code> - your API key is wrong or user not authorized (not logged in)</p>
+</li>
+<li>
+<p>403 <code>Forbidden</code> - access denied (e.g. user / application is not allowed to use the resource)</p>
+</li>
+<li>
+<p>404 <code>Not Found</code> - resource could not be found</p>
+</li>
+<li>
+<p>405 <code>Method Not Allowed</code> - specified method is not allowed for resource</p>
+</li>
+<li>
+<p>422 <code>Unprocessable Entity</code> - validation (semantic) errors. Request is well-formed, but cannot be processed (e.g. payment due date is in past). Errors are specified in response body (see below)</p>
+</li>
+<li>
+<p>429 <code>Too Many Requests</code> - you exceeded the rate limit (see API usage limits below)</p>
+</li>
+<li>
+<p>500 <code>Internal Server Error</code> - something went wrong on our side</p>
+</li>
+<li>
+<p>503 <code>Service Unavailable</code> - there is planned service outage (TODO: should specify response headers with more details on service outage)</p>
+</li>
+</ul>
+<h2 id="header-api-usage-limits">API usage limits <a class="permalink" href="#header-api-usage-limits" aria-hidden="true">¶</a></h2>
+<p>Our API has usage limits, meaning number of API calls that your application can perform during specified time period. On each call, your app wil receive currently set limits and remaining quotas in following headers:</p>
+<p><code>X-RateLimit-Limit-[API_NAME]-Minute: 10</code>            - currently set limit of API calls</p>
+<p><code>X-RateLimit-Remaining-[API_NAME]-Minute: 9</code>         - remaining limit of API calls in given time period</p>
+<p>If you exceed limits set for your application, you will receive HTTP status 429 with empty body.</p>
+<h2 id="header-error-handling">Error handling <a class="permalink" href="#header-error-handling" aria-hidden="true">¶</a></h2>
+<p>Besides HTTP status codes, which are the main indication if something goes wrong, we also use <code>errors</code> object to report more details about errors.</p>
+<p>Errors object example:</p>
+<pre><code class="language-javascript">{
+    ...
+
+    errors: [
+        {
+            <span class="hljs-string">"code"</span>: <span class="hljs-string">"ERR_100"</span>,
+            <span class="hljs-string">"message"</span>: <span class="hljs-string">"Invalid account number"</span>,
+            <span class="hljs-string">"severity"</span>: <span class="hljs-string">"ERROR"</span>,
+            <span class="hljs-string">"ticketId"</span>: <span class="hljs-string">"UAT1:AMS:20160516-091658.450:45e4"</span> <span class="hljs-comment">// optional</span>
+        },
+        {
+            <span class="hljs-string">"code"</span>: <span class="hljs-string">"ERR_352"</span>,
+            <span class="hljs-string">"message"</span>: <span class="hljs-string">"Insufficiend funds for payment order realization"</span>,
+            <span class="hljs-string">"severity"</span>: <span class="hljs-string">"WARN"</span>
+        },
+        {
+            <span class="hljs-string">"code"</span>: <span class="hljs-string">"ERR_523"</span>,
+            <span class="hljs-string">"message"</span>: <span class="hljs-string">"This order will trigger currency exchange operation"</span>,
+            <span class="hljs-string">"severity"</span>: <span class="hljs-string">"INFO"</span>
+        }
+    ]
+}</code></pre>
+<p>Error object attributes</p>
+<table>
+<thead>
+<tr>
+<th>attribute name</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>unique error code</td>
+</tr>
+<tr>
+<td>message</td>
+<td>human readable error description (non-localized)</td>
+</tr>
+<tr>
+<td>severity</td>
+<td>error severity (see below)</td>
+</tr>
+<tr>
+<td>ticketId</td>
+<td>internal ticket ID, used for error backtracking</td>
+</tr>
+</tbody>
+</table>
+<p>There are 3 levels of error severity:</p>
+<ul>
+<li>
+<p>ERROR - critical error, execution cannot continue.</p>
+</li>
+<li>
+<p>WARN - non-critical error, execution can continue but further user interaction is advisable (for request to proceed, you MUST specify this error code in <code>override</code> request attribute).</p>
+</li>
+<li>
+<p>INFO - information only, execution can continue without user interaction.</p>
+</li>
+</ul>
+<h3 id="header-most-important-error-codes">Most important error codes <a class="permalink" href="#header-most-important-error-codes" aria-hidden="true">¶</a></h3>
+<ul>
+<li>
+<p><strong>OBJECT_NOT_FOUND</strong> - Cannot find required object</p>
+</li>
+<li>
+<p><strong>OBJECT_IN_WRONG_STATE</strong> - Cannot perform requested operation in current objects’ state (e.g. withdrawal code cannot be resend because it is inactive, or payment order cannot be edited)</p>
+</li>
+<li>
+<p><strong>INVALID_REQUEST</strong> - There are syntax errors in request (missing required parameter, wrong attribute value etc.)</p>
+</li>
+<li>
+<p><strong>FILTER_ERROR</strong> - There is an error in filter specification</p>
+</li>
+<li>
+<p><strong>SORT_ERROR</strong> - There is an error in sorting specification</p>
+</li>
+<li>
+<p><strong>GENERAL_ERROR</strong> - Unspecified (usually unexpected) error; use <em>ticketId</em> attribute to report it.</p>
+</li>
+</ul>
+<h2 id="header-formats">Formats <a class="permalink" href="#header-formats" aria-hidden="true">¶</a></h2>
+<ul>
+<li>
+<p><strong>date</strong> and <strong>time</strong> uses <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> formatting, e.g.:</p>
+<ul>
+<li>date is represented as <code>YYYY-mm-dd</code>. Timezone is added when necessary.</li>
+<li>time is represented as <code>Thh:mm:ss</code>. Timezone is added when necessary.</li>
+<li>day of week is represented as number 1…7, with 1 being Monday</li>
+<li>week no. 1 is the week with the year’s first Thursday in it</li>
+</ul>
+</li>
+<li>
+<p><strong>phone numbers</strong> uses international format starting with ‘+’ and including country code</p>
+</li>
+<li>
+<p><strong>numbers format</strong> number format is defined by <a href="http://www.json.org">JSON standard</a>, e.g. decimals are separated by <code>.</code></p>
+</li>
+</ul>
+</div><div class="middle"><section id="security" class="resource-group"><h2 class="group-heading">Security <a href="#security" class="permalink">&para;</a></h2><h2 id="header-security-concept-of-open-api">Security concept of Open API <a class="permalink" href="#header-security-concept-of-open-api" aria-hidden="true">¶</a></h2>
+<p>Security is our key concern. To allow you use our API securely, we divide API resources into three groups, each requiring different level of security.</p>
+<h3 id="header-public-services-prefix-testing">Public services - prefix <strong>/testing</strong> <a class="permalink" href="#header-public-services-prefix-testing" aria-hidden="true">¶</a></h3>
+<p>To use public services like list of branches, you need a valid <a href="#header-api-key">API key</a>. There is no need for users of your application to log in, or even have any agreement with us.</p>
+<h2 id="header-api-key">API key <a class="permalink" href="#header-api-key" aria-hidden="true">¶</a></h2>
+<p>Your application needs a valid <em>API key</em>  to access /public services of Open API, e.g. services that are not bound to current user. You can get one in Developers portal, this section describes how to use it correctly.</p>
+<h3 id="header-obtaining-api-key">Obtaining API key <a class="permalink" href="#header-obtaining-api-key" aria-hidden="true">¶</a></h3>
+<p>You can obtain API key by registering your application in our Developers portal. You have to use different API key for each of your applications. You will utlimately need two API keys per application, one for testing enviroment (sandbox) and one for production usage.</p>
+<blockquote>
+<p><strong>Important</strong>: Keep your production API keys safe, as it will identify your application, counts to resource usage limits etc.</p>
+</blockquote>
+<p>API keys are valid for the whole Open API (as for now), but this might be changed in future.</p>
+<h3 id="header-using-api-key">Using API key <a class="permalink" href="#header-using-api-key" aria-hidden="true">¶</a></h3>
+<p>API key is a 30 character string, that must be passed on each API call in header field called <code>apikey</code>. Example:</p>
+<pre><code>curl -H <span class="hljs-string">"apikey: 62eb165c070a41d5c1b58d9d3d725ca1"</span> <span class="hljs-string">https:</span><span class="hljs-comment">//api.bank.cz/public/branches</span></code></pre>
+<ul>
+<li>if you fail to specify apikey, you will receive <code>401 Unauthorized</code> error and following response body:</li>
+</ul>
+<pre><code>{"<span class="hljs-attribute">message</span>":<span class="hljs-value"><span class="hljs-string">"No API Key found in headers, body or querystring"</span></span>}</code></pre>
+<ul>
+<li>if you provide invalid apikey, you will receive <code>403 Forbidden</code> error and following response body:</li>
+</ul>
+<pre><code>{"<span class="hljs-attribute">message</span>":<span class="hljs-value"><span class="hljs-string">"Invalid authentication credentials"</span></span>}</code></pre>
 <hr>
-<p>:<a href="src/includes/group-profile.apib">Group Profile</a></p>
-<p>:<a href="src/includes/data-structures.apib">Data Structures</a></p>
-</section></div><div class="middle"><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 17 Nov 2016</p></div></div></div></div><script>/* eslint-env browser */
+</section></div><div class="middle"><section id="accounts" class="resource-group"><h2 class="group-heading">Accounts <a href="#accounts" class="permalink">&para;</a></h2></section></div><div class="middle"><div id="accounts-single-account" class="resource"><h3 class="resource-heading">Single account <a href="#accounts-single-account" class="permalink">&para;</a></h3><p>Resources for single user account.</p>
+</div></div><div class="right"><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/testing/accounts/<span class="hljs-attribute" title="id">54307275</span></span></div><div class="tabs"><div class="example-names"><span>Requests</span><span class="tab-button">Existing account</span><span class="tab-button">Non-existing account</span></div><div class="tab"><div><div class="inner"><div class="description text-muted">This response has no content.</div><div style="height: 1px;"></div></div></div><div class="tabs"><div class="example-names"><span>Responses</span><span class="tab-button">200</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json; charset=utf-8</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">honourBeforeName</span>": <span class="hljs-value"><span class="hljs-string">"Ing."</span></span>,
+    "<span class="hljs-attribute">honourAfterName</span>": <span class="hljs-value"><span class="hljs-string">"PhD."</span></span>,
+    "<span class="hljs-attribute">firstName</span>": <span class="hljs-value"><span class="hljs-string">"John"</span></span>,
+    "<span class="hljs-attribute">middleNames</span>": <span class="hljs-value">[
+      <span class="hljs-string">"Peter"</span>,
+      <span class="hljs-string">"Frank"</span>
+    ]</span>,
+    "<span class="hljs-attribute">lastName</span>": <span class="hljs-value"><span class="hljs-string">"Doe"</span>
+  </span>}</span>,
+  "<span class="hljs-attribute">salutation</span>": <span class="hljs-value"><span class="hljs-string">"Mr."</span></span>,
+  "<span class="hljs-attribute">vocative</span>": <span class="hljs-value"><span class="hljs-string">"John"</span></span>,
+  "<span class="hljs-attribute">isAdult</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">honourBeforeName</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"academical degree in front of name"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">honourAfterName</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"academical degree behind name"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">firstName</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"user first (given) name"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">middleNames</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"middle names"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">lastName</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"user family name"</span>
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+        <span class="hljs-string">"firstName"</span>,
+        <span class="hljs-string">"lastName"</span>
+      ]
+    </span>}</span>,
+    "<span class="hljs-attribute">salutation</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"salutation, e.g. Mr. or Mrs."</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">vocative</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"user's name vocative"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">isAdult</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"set to true if user is over 18 years old"</span>
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"name"</span>,
+    <span class="hljs-string">"salutation"</span>,
+    <span class="hljs-string">"isAdult"</span>
+  ]
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></div><div class="tab"><div><div class="inner"><div class="description text-muted">This response has no content.</div><div style="height: 1px;"></div></div></div><div class="tabs"><div class="example-names"><span>Responses</span><span class="tab-button">404</span></div><div class="tab"><div><div class="inner"><div class="description"><p>When account is not found.</p>
+</div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json; charset=utf-8</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">errors</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">code</span>": <span class="hljs-value"><span class="hljs-string">"ERR_1000_SOME_ERROR_CODE"</span></span>,
+      "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Some error/validation message description"</span></span>,
+      "<span class="hljs-attribute">severity</span>": <span class="hljs-value"><span class="hljs-string">"ERROR"</span></span>,
+      "<span class="hljs-attribute">ticketId</span>": <span class="hljs-value"><span class="hljs-string">"UAT1:AMS:20160516-091658.450:45e4"</span>
+    </span>}
+  ]
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">errors</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+      "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">code</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"unique internal error code"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">message</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"human readable error description (non-localized)"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">severity</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+              <span class="hljs-string">"ERROR"</span>,
+              <span class="hljs-string">"WARN"</span>,
+              <span class="hljs-string">"INFO"</span>
+            ]
+          </span>}</span>,
+          "<span class="hljs-attribute">ticketId</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"internal ticket ID, used for error backtracking"</span>
+          </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+          <span class="hljs-string">"code"</span>,
+          <span class="hljs-string">"message"</span>,
+          <span class="hljs-string">"severity"</span>
+        ]
+      </span>}
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"errors"</span>
+  ]
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></div></div></div><div class="middle"><div id="accounts-single-account-get" class="action get"><h4 class="action-heading"><div class="name">Get account details</div><a href="#accounts-single-account-get" class="method get">GET</a><code class="uri">/testing/accounts/{id}</code></h4><p>Retrieve details about specified user account.</p>
+<div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>id</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>54307275</span></span><p>internal account identifier</p>
+</dd></dl></div></div></div><hr class="split"><div class="middle"><div id="accounts-accounts-list" class="resource"><h3 class="resource-heading">Accounts list <a href="#accounts-accounts-list" class="permalink">&para;</a></h3></div></div><div class="right"><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/testing/accounts</span></div><div class="tabs"><div class="tabs"><div class="example-names"><span>Responses</span><span class="tab-button">200</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json; charset=utf-8</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">honourBeforeName</span>": <span class="hljs-value"><span class="hljs-string">"Ing."</span></span>,
+        "<span class="hljs-attribute">honourAfterName</span>": <span class="hljs-value"><span class="hljs-string">"PhD."</span></span>,
+        "<span class="hljs-attribute">firstName</span>": <span class="hljs-value"><span class="hljs-string">"John"</span></span>,
+        "<span class="hljs-attribute">middleNames</span>": <span class="hljs-value">[
+          <span class="hljs-string">"Peter"</span>,
+          <span class="hljs-string">"Frank"</span>
+        ]</span>,
+        "<span class="hljs-attribute">lastName</span>": <span class="hljs-value"><span class="hljs-string">"Doe"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">salutation</span>": <span class="hljs-value"><span class="hljs-string">"Mr."</span></span>,
+      "<span class="hljs-attribute">vocative</span>": <span class="hljs-value"><span class="hljs-string">"John"</span></span>,
+      "<span class="hljs-attribute">isAdult</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
+    </span>}
+  ]
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+      "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+            "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">honourBeforeName</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"academical degree in front of name"</span>
+              </span>}</span>,
+              "<span class="hljs-attribute">honourAfterName</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"academical degree behind name"</span>
+              </span>}</span>,
+              "<span class="hljs-attribute">firstName</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"user first (given) name"</span>
+              </span>}</span>,
+              "<span class="hljs-attribute">middleNames</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+                "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"middle names"</span>
+              </span>}</span>,
+              "<span class="hljs-attribute">lastName</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"user family name"</span>
+              </span>}
+            </span>}</span>,
+            "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+              <span class="hljs-string">"firstName"</span>,
+              <span class="hljs-string">"lastName"</span>
+            ]
+          </span>}</span>,
+          "<span class="hljs-attribute">salutation</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"salutation, e.g. Mr. or Mrs."</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">vocative</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"user's name vocative"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">isAdult</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"set to true if user is over 18 years old"</span>
+          </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+          <span class="hljs-string">"name"</span>,
+          <span class="hljs-string">"salutation"</span>,
+          <span class="hljs-string">"isAdult"</span>
+        ]
+      </span>}
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"data"</span>
+  ]
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></div></div><div class="middle"><div id="accounts-accounts-list-get" class="action get"><h4 class="action-heading"><div class="name">Get list of accounts</div><a href="#accounts-accounts-list-get" class="method get">GET</a><code class="uri">/testing/accounts</code></h4><p>Get a list of user accounts.</p>
+<table>
+<thead>
+<tr>
+<th>feature</th>
+<th>supported by resource</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#header-paging">paging</a></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="#header-sorting">sorting</a></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="#header-filtering">filtering</a></td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+</div></div><hr class="split"><div class="middle"><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 17 Nov 2016</p></div></div></div></div><script>/* eslint-env browser */
 /* eslint quotes: [2, "single"] */
 'use strict';
 
