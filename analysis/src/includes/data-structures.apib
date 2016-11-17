@@ -1,0 +1,34 @@
+# Data Structures
+
+## Address (object)
++ streetAddress: Legerova 12 (string, required) - street and number
++ city: Prague (string, required)
++ zip: 110 00 (string, required)
+
+## PagingInfo (object)
++ itemsPerPage: 10 (number, required) - number of items per page
++ nextPage: `transactions?sort=category&limit=10&after=25` (string, optional) - request to retrieve next page. Either nextPage or previousPage is returned, depending whether you specify after or before parameter (or none, if you retrieve whole collection).
++ prevPage: `transactions?sort=category&limit=10&before=25` (string, optional) - request to retrieve previous page.
+
+## UserAccount (object)
++ name (object, required)
+  + honourBeforeName: Ing. (string, optional) - academical degree in front of name
+  + honourAfterName: PhD. (string, optional) - academical degree behind name
+  + firstName: John (string, required) - user first (given) name
+  + middleNames: Peter, Frank (array[string], optional) - middle names
+  + lastName: Doe (string, required) - user family name
++ salutation: Mr. (string, required) - salutation, e.g. Mr. or Mrs.
++ vocative: John (string, optional) - user's name vocative
++ isAdult: true (boolean, required) - set to true if user is over 18 years old
+
+## Error (object)
++ code: `ERR_1000_SOME_ERROR_CODE` (string, required) - unique internal error code
++ message: `Some error/validation message description` (string, required) - human readable error description (non-localized)
++ severity (enum, required)
+    + ERROR - critical error, execution cannot continue. This MUST be indicated also by appropriate HTTP status code
+    + WARN - non-critical error, execution can continue but further user interaction is advisable. This MIGHT be indicated also by appropriate HTTP status code
+    + INFO - information only, execution can continue without user interaction
++ ticketId: `UAT1:AMS:20160516-091658.450:45e4` (string, optional) - internal ticket ID, used for error backtracking
+
+## Errors (object)
++ errors: (array[Error], fixed-type, required)

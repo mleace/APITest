@@ -1,0 +1,42 @@
+# Group Accounts
+
+## Single account [/testing/accounts/{id}]
+Resources for single user account.
+
++ Parameters
+  + id: `54307275` (number,required) - internal account identifier
+
+### Get account details [GET]
+Retrieve details about specified user account. 
+
++ Request Existing account
+    + Parameters
+        + id: `54307275`
+
++ Response 200 (application/json;charset=UTF-8)
+  + Attributes (UserAccount, required)
+
++ Request Non-existing account
+    + Parameters
+        + id: `123`
+
++ Response 404 (application/json;charset=UTF-8)
+  When account is not found.
+
+  + Attributes (Errors, required)
+
+## Accounts list [/testing/accounts]
+
+### Get list of accounts [GET]
+Get a list of user accounts.
+
+feature | supported by resource
+--- | ---
+[paging](#header-paging) | no
+[sorting](#header-sorting) | no
+[filtering](#header-filtering) | no
+
+
++ Response 200 (application/json;charset=UTF-8)
+  + Attributes (object)
+        + data (array[UserAccount], fixed-type, required)

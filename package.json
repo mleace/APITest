@@ -1,0 +1,20 @@
+{
+  "name": "demo_atl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "underscore": "^1.8.3",
+    "gulp": "^3.9.1",
+    "gulp-aglio": "^0.0.10",
+    "hercule": "^2.0.5"
+  }
+}

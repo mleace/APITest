@@ -1,0 +1,37 @@
+## Security concept of Open API
+Security is our key concern. To allow you use our API securely, we divide API resources into three groups, each requiring different level of security.
+
+### Public services - prefix **/testing**
+To use public services like list of branches, you need a valid [API key](#header-api-key). There is no need for users of your application to log in, or even have any agreement with us.
+
+## API key
+Your application needs a valid *API key*  to access /public services of Open API, e.g. services that are not bound to current user. You can get one in Developers portal, this section describes how to use it correctly.
+
+### Obtaining API key
+You can obtain API key by registering your application in our Developers portal. You have to use different API key for each of your applications. You will utlimately need two API keys per application, one for testing enviroment (sandbox) and one for production usage. 
+
+> **Important**: Keep your production API keys safe, as it will identify your application, counts to resource usage limits etc.
+
+API keys are valid for the whole Open API (as for now), but this might be changed in future.
+
+### Using API key
+API key is a 30 character string, that must be passed on each API call in header field called `apikey`. Example:
+
+```
+curl -H "apikey: 62eb165c070a41d5c1b58d9d3d725ca1" https://api.bank.cz/public/branches
+```
+
+
+- if you fail to specify apikey, you will receive `401 Unauthorized` error and following response body:
+
+```
+{"message":"No API Key found in headers, body or querystring"}
+```
+
+- if you provide invalid apikey, you will receive `403 Forbidden` error and following response body:
+
+```
+{"message":"Invalid authentication credentials"}
+```
+
+
