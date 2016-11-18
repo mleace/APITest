@@ -25,7 +25,8 @@ var accounts = [
       },
       "salutation": "Mr.",
       "vocative": "John",
-      "isAdult": true
+      "isAdult": true,
+"age": 25
     },
     {
       "name": {
@@ -38,7 +39,8 @@ var accounts = [
       },
       "salutation": "Mr.",
       "vocative": "Peter",
-      "isAdult": true
+      "isAdult": true,
+"age": 20
     },
     {
       "name": {
@@ -50,7 +52,8 @@ var accounts = [
       },
       "salutation": "Mrs.",
       "vocative": "Jain Xi",
-      "isAdult": true
+      "isAdult": true,
+"age": 23
     },
     {
       "name": {
@@ -62,7 +65,8 @@ var accounts = [
       },
       "salutation": "Mr.",
       "vocative": "Mirek",
-      "isAdult": true
+      "isAdult": true,
+"age": 30
     }
 ];
 
