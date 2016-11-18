@@ -1,6 +1,1 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Dredd Tests" tests="3" failures="0" errors="0" skip="0" timestamp="Fri, 18 Nov 2016 06:57:58 GMT" time="0.165">
-<testcase name="GET /testing/accounts/3" time="0.086"/>
-<testcase name="GET /testing/accounts/123" time="0.027"/>
-<testcase name="GET /testing/accounts" time="0.035"/>
-</testsuite>
