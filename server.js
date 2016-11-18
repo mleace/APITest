@@ -80,6 +80,25 @@ function sendBody(req, res, data, limit) {
 }
 
 // ------------ public API --------------
+//
+app.post("/testing/accounts/:id", function (req, res) {
+    var accId = req.params.id;
+    console.log(JSON.stringify(req.body));
+    if (accId && accounts[accId]) {
+        sendBody(req, res, req.body, "testing=1");
+    } else {
+        res.status(404).json(
+            { "errors": [
+                    {
+                        "code": "OBJECT_NOT_FOUND",
+                        "message": "Cannot find specified account",
+                        "severity":"ERROR"
+                    }
+                ]
+            }
+            );
+    }
+});
 
 app.get("/testing/accounts/:id", function(req, res) {
     var accId = req.params.id;

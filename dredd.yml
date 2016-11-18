@@ -9,7 +9,7 @@ custom: {}
 names: false
 reporter: ["html", "junit", "markdown"]
 output: ["test_output/dredd_output.html", "test_output/dredd.xml", "test_output/dredd.md"]
-header: ["apikey: demo_user_key"]
+header: ["apikey: b5a44b32ba2f42f8b27fcaf1bd86e813"]
 sorted: false
 user: null
 inline-errors: false
@@ -21,4 +21,4 @@ timestamp: false
 silent: false
 path: []
 blueprint: "analysis/generated/open-api.apib"
-endpoint: 'http://localhost:3500/'
+endpoint: 'http://openapi.hcnet.vn:8000/openapi/v1/'
